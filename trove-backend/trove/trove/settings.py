@@ -42,8 +42,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework.authtoken',
-    'social_django',
-    'products.apps.ProductsConfig'
+    'eav',
+    'social_django',    
+    'product_api.apps.ProductApiConfig',
 ]
 
 MIDDLEWARE = [
