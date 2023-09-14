@@ -1,4 +1,7 @@
+cryptg
 django
+django-eav2
 django_rest_framework
 python-dotenv
+telethon
 social-auth-app-django
