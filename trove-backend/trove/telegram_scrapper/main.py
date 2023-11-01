@@ -67,7 +67,9 @@ async def main():
 
     for channel_username in channels:
         await scrape_channel(db, channel_username, message_limit=100)
-
+        
+        print(channel_username)
+        
         with open(os.path.join(DATA_DIRECTORY, f'{channel_username}.json'), 'w') as f:
             string = json.dumps(db.to_json())
             f.write(string) 
