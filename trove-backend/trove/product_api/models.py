@@ -23,7 +23,7 @@ class Product(models.Model):
 
 class Image(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    image_url = models.CharField(max_length=2000)    
+    url = models.CharField(max_length=2000)    
     product = models.ForeignKey(Product, related_name='images', on_delete=models.CASCADE)
 
     def __str__(self):
