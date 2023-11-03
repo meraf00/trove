@@ -14,12 +14,19 @@ class Product(models.Model):
     name = models.CharField(max_length=150)
     price = models.FloatField()
     stock = models.IntegerField()
-    image_url = models.CharField(max_length=2000)
-    categories = models.ManyToManyField(Category, related_name='products')    
+    description = models.TextField(default='')        
+    categories = models.ManyToManyField(Category, related_name='products')        
     
     def __str__(self):
         return self.name
     
 
+class Image(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    image_url = models.CharField(max_length=2000)    
+    product = models.ForeignKey(Product, related_name='images', on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.image_url
 
 eav.register(Product)
