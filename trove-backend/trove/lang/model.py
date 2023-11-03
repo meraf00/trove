@@ -84,7 +84,7 @@ class LangModel:
     def extract(self, info, text):   
         text = self.sanitize(text)                
 
-        prompt = f"Extract {info} from this paragraph.\n\n{text}.".encode("utf-8", "replace").decode()                        
+        prompt = f"Extract {info} from this paragraph. List them separated with comma without other text.\n\n{text}. ".encode("utf-8", "replace").decode()                        
         
         response = palm.generate_text(**self.summarize_config, prompt=prompt)
 
